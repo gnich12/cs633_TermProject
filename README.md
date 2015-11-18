@@ -15,3 +15,11 @@ and you wont have to reset the server manually, it will do it automatically. to 
 of your project and type 
 
 <b> npm install -g nodemon <b>
+
+
+Some instructions
+If you want to add new a css file or a javascript file on the head of the html
+modify the file head.ejs on partials. Same thing for the footer and also if you need to add a
+script to the end of the file you can added to the bootstrap_script.ejs files
+
+you can use the starter.ejs to start a page for the app.
