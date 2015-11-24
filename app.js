@@ -6,12 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
+var test=require('./DAO/registerDB.js')
 
 
 
 var routes = require('./routes/index');
-//var profile = require('./routes/profile');
+var register = require('./routes/register');
 var login = require('./routes/login');
+//var auth= require('./routes/auth');
 
 var app = express();
 
@@ -40,7 +42,8 @@ app.use(flash());
 app.use('/', routes);
 //app.use('/users', users);
 app.use('/login', login);
-//app.use('/profile', profile);
+app.use('/register', register);
+//app.use('/auth',auth);
 
 
 // catch 404 and forward to error handler

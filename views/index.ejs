@@ -5,15 +5,15 @@
 </head>
 
 <body>
-    <h1 class="text-uppercase"><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <!-- Navigation -->
+    <% include main/navigation.ejs%>
+
+    <!-- Main Body of the app -->
+    <% include main/body.ejs%>
 
 
-    <footer>
-        <%include ./partials/footer.ejs%>
-    </footer>
-
-    <%include ./partials/bootstrap_scripts.ejs%>
+    <%include partials/bootstrap_scripts.ejs%>
 </body>
 </html>
 

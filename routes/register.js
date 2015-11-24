@@ -3,11 +3,16 @@ var router = express.Router();
 
 
 /* GET home page.*/
-router.get('/profile', isLoggedIn, function(req, res, next) {
-    res.render('profile',
-        {title:'User Profile',
-         name: req.user.first_name
+
+
+router.get('/', function(req, res, next) {
+    res.render('register',
+        {title:'Register',
+         project:'Business App',
+         message: req.flash('error'),
+         info:''
     });
+    console.log(req.session);
 });
 
 function isLoggedIn(req, res, next) {
