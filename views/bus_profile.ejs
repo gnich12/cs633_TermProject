@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%include ./partials/head.ejs%>
+</head>
+
+<body>
+
+<% include main/navigation.ejs %>
+<div class="container profile-container">
+    <div>
+        <h1>Profile</h1>
+    </div>
+    <div>
+        <ul>
+            <li>First Name: <%= user_info.first_name %></li>
+            <li>Last Name: <%= user_info.last_name %></li>
+            <li>E-mail: <%= user_info.email %></li>
+        </ul>
+    </div>
+    <hr>
+
+
+</div>
+
+<footer class="custom-footer" >
+    <div class="container">
+        <%include partials/footer.ejs%>
+    </div>
+</footer>
+<% include partials/bootstrap_scripts.ejs %>
+</body>
+</html>

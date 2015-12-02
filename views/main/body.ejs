@@ -1,9 +1,32 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <h1>Business Directory</h1>
+        <h4>How to:</h4>
+        <ol>
+            <li>Type your business name</li>
+            <li>Type City, State or Zipcode</li>
+            <li>Click Search</li>
+        </ol>
+        <form action="/results" method="get" class="form-group-lg">
+        <div class="form-group">
+            <input type="text" required name="search" id="bsearch" placeholder="Enter your business name"> |
+            <label for="state">City</label>
+            <input type="text" required name="cszipcode" id="city" placeholder="City">
+            <label for="state">State</label>
+            <select name="state">
+                <option value="" selected>...</option>
+                <option value="ca">CA</option>
+                <option value="il">IL</option>
+                <option value="fl">FL</option>
+            </select>
+            <label for="state">Or Zipcode</label>
+            <input type="text" name="zipcode" placeholder="zipcode" id="zipcode">
+            <input type="submit" name="submit" value="Search">
+        </div>
+
+
+        </form>
     </div>
 </div>
 
@@ -30,7 +53,10 @@
     <hr>
 
 
-    <footer>
-        <%include ../partials/footer.ejs%>
-    </footer>
+
 </div><!-- Main Container -->
+<footer class="custom-footer" >
+    <div class="container">
+        <%include ../partials/footer.ejs%>
+    </div>
+</footer>

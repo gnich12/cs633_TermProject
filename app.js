@@ -6,14 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
-var test=require('./DAO/registerDB.js')
+
 
 
 
 var routes = require('./routes/index');
 var register = require('./routes/register');
 var login = require('./routes/login');
-//var auth= require('./routes/auth');
+var profile= require('./routes/profile.js');
 
 var app = express();
 
@@ -27,8 +27,8 @@ app.use(logger('dev'));
 app.use(require('morgan')('combined'));
 app.use(require('express-session')({
   secret:'term project',
-  resave:true,
-  saveUninitialized:true
+  resave:false,
+  saveUninitialized:false
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,7 +43,7 @@ app.use('/', routes);
 //app.use('/users', users);
 app.use('/login', login);
 app.use('/register', register);
-//app.use('/auth',auth);
+app.use('/profile',profile);
 
 
 // catch 404 and forward to error handler

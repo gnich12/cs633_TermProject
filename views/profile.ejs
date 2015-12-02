@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <% include ./partials/head.ejs %>
+<%include ./partials/head.ejs%>
 </head>
 
 <body>
-    <p><%=name%></p>
 
-<footer>
-    <%include ./partials/footer.ejs%>
+<% include main/navigation.ejs %>
+<div class="container profile-container">
+    <div>
+        <h1>Profile</h1>
+    </div>
+    <div>
+        <ul>
+            <li>First Name: <%= user_info.first_name %></li>
+            <li>Last Name: <%= user_info.last_name %></li>
+            <li>E-mail: <%= user_info.email %></li>
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <h1>My Comments</h1>
+        <table class="table table-bordered">
+            <tr>
+                <th>Date</th>
+                <th>Business</th>
+                <th>Review</th>
+                <th>Score</th>
+            </tr>
+            <% if (user_info.flag === 0){
+        var d = new Date(user_info.comments[0].review_date);
+        console.log(user_info);
+    %>
+            <tr>
+                <td><%= (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear() %></td>
+                <td><%= user_info.comments[0].business_name %></td>
+                <td><%= user_info.comments[0].comment %></td>
+                <td><%= user_info.comments[0].score %></td>
+            </tr>
+            <% }else if(user_info.flag === 1){ %>
+            <tr>
+                <td>No Comments</td>
+            </tr>
+            <% }else{ user_info.comments.forEach(function(i){
+        var comment_date = new Date(i.review_date);
+    %>
+            <tr>
+                <td><%= (comment_date.getMonth() + 1) + "-" + comment_date.getDate()
+    + "-" + comment_date.getFullYear() %></td>
+                <td><%= i.business_name %></td>
+                <td><%= i.comment %></td>
+                <td><%= i.score %></td>
+            </tr>
+
+            <% });}%>
+        </table>
+    </div>
+
+</div>
+
+<footer class="custom-footer" >
+    <div class="container">
+        <%include partials/footer.ejs%>
+    </div>
 </footer>
-
-<%include ./partials/bootstrap_scripts.ejs%>
+<% include partials/bootstrap_scripts.ejs %>
 </body>
 </html>

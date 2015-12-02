@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var biz=require('passport');
+require('../DAO/authDAO.js')(biz);
 /*
 var passport = require('passport');
 require('../DAO/authDAO.js')(passport);
@@ -12,47 +14,25 @@ router.get('/', function(req, res, next) {
         { title: 'Log In',
           project:"Business App",
           info:"",
-          message:req.flash("loginMessage")
+          message:req.flash("loginMessage"),
+          message2:req.flash("authMessage"),
+          type_code:1
         });
-    console.log(req.session);
+    console.log(req.session +"from login page");
 });
-
-/*router.get('/login',function(req, res){
-    res.render('login',{
-        title:'Log In',
-        project:'Business App',
-        message:req.flash('loginMessage')
-    });
-    console.log("call me 2");
-});*/
-
-
-//calls auth methods to verify credentials
-/*router.post('/auth', passport.authenticate('local',{
-        successRedirect : '/login/profile', // redirect to the secure profile section
-        failureRedirect : '/',
+router.post('/auth_business', biz.authenticate('business-login', {
+        successRedirect: '/bus_profile', // redirect to the secure profile section
+        failureRedirect: '/login',
         failureFlash: true// redirect back to the signup page if there is an error
     })
-);*/
-//renders profile page with info from DB
-/*router.get('/profile', isLoggedIn, function(req, res, next) {
-    res.render('profile',
-        {title:'User Profile',
-            name: req.user.first_name
-        });
+);
+
+router.get('/ulogin',function(req, res, next){
+    res.send('ok');
 });
 
-function isLoggedIn(req, res, next) {
-
-    // if user is authenticated in the session, carry on
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-}*/
-
-
-
+router.get('/bulogin',function(req, res, next){
+    res.send('ok');
+});
 
 module.exports = router;

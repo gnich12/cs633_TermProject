@@ -1,0 +1,74 @@
+
+    <div class="custom-container">
+        <h1>New Business User</h1>
+        <form class="form-group" action="/register/biz_regis" method="post">
+            <div class="form-group">
+                <label for="username" name="username">Username</label>
+                <input type="text" required class="form-control" id="biz_username" placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" required class="form-control" id="biz_password" placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" required class="form-control" id="firstname" placeholder="First name" name="firstname">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" required class="form-control" id="lastname" placeholder="Last name" name="lastname">
+            </div>
+            <div class="form-group">
+                <label for="E-mail">E-mail</label>
+                <input type="email" required class="form-control" id="email" placeholder="E-mail" name="email">
+            </div>
+            <h2>Business information</h2>
+            <div class="form-group">
+                <label for="business_name">Business Name</label>
+                <input type="text" required class="form-control" id="biz_name"
+                       placeholder="Business Name" name="business_name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" required class="form-control" id="biz_description"
+                       placeholder="Business Description" name="biz_desc">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" required class="form-control" id="address"
+                       placeholder="Address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" required class="form-control" id="city"
+                       placeholder="city" name="city">
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <select name="state">
+                    <option value="" selected>...</option>
+                    <option value="ca">CA</option>
+                    <option value="il">IL</option>
+                    <option value="fl">FL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" required class="form-control" id="zipcode"
+                       placeholder="zipcode" name="zipcode">
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number</label>
+                <input type="text" required class="form-control" id="phone_number"
+                       placeholder="Phone Number" name="phone_number">
+            </div>
+            <div class="form-group">
+                <label for="biz_email">E-mail</label>
+                <input type="text" required class="form-control" id="biz_email"
+                       placeholder="E-mail" name="biz_email">
+            </div>
+            <input type="submit" value="Register" class="btn btn-default">
+            <a href="/" class="btn btn-default">Cancel</a>
+        </form>
+        <h4><%= message %></h4>
+    </div><!-- new user form end-->
