@@ -7,8 +7,42 @@
 <body>
 <!-- Navigation -->
 <%include main/navigation.ejs%>
-
-
+<%include forms/search_form.ejs%>
+<div class="container" >
+    <h1>Results</h1>
+    <%if (binfo.length>1){
+        binfo.forEach(function(biz){
+    %>
+        <div>
+            <div>
+                <h4><a href="#"><%=biz.business_name%></a></h4>
+                <ul>
+                     <li>Address:<%=biz.address%></li>
+                    <li>City:<%=biz.city%></li>
+                    <li>State:<%=biz.state%></li>
+                </ul>
+            </div>
+            <div>
+                <span>Rating:<%=(biz.avg_score===null?"No rating yet" : biz.avg_score)%> </span>
+            </div>
+        </div>
+    <%});%>
+    <%}else{%>
+        <div>
+            <div>
+                <h4><a href="#"><%=binfo.business_name%></a></h4>
+                <ul>
+                    <li>Address:<%=binfo.address%></li>
+                    <li>City:<%=binfo.city%></li>
+                    <li>State:<%=binfo.state%></li>
+                </ul>
+            </div>
+            <div>
+                <span>Rating: <%=(binfo.avg_score===null? "No rating yet" : binfo.avg_score)%></span>
+            </div>
+        </div>
+    <%}%>
+</div>
 
 
 <footer class="custom-footer" >

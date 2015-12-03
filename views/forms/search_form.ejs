@@ -1,0 +1,28 @@
+<div class="container" style="margin-top: 90px">
+    <h1>Business Directory</h1>
+    <h4>How to:</h4>
+    <ol>
+        <li>Type your business name</li>
+        <li>Type City, State or Zipcode</li>
+        <li>Click Search</li>
+    </ol>
+    <form action="/results" method="get" class="form-group-lg">
+        <div class="form-group">
+            <input type="text"  name="bname" id="bname" placeholder="Enter your business name"> |
+            <label for="state">City</label>
+            <input type="text"  name="city" id="city" placeholder="City">
+            <label for="state">State</label>
+            <select name="state">
+                <option value="" selected>...</option>
+                <option value="ca">CA</option>
+                <option value="il">IL</option>
+                <option value="fl">FL</option>
+            </select>
+            <label for="zipcode">Or Zipcode</label>
+            <input type="text" name="zipcode" placeholder="zipcode" id="zipcode">
+            <input type="submit" name="submit" value="Search">
+        </div>
+
+
+    </form>
+</div>

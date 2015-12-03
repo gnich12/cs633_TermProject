@@ -88,8 +88,16 @@ router.get('/logout', function (req, res, next) {
 //});
 
 router.get('/results', function(req, res, next){
-    console.log(req.query);
-    res.send('ok');
+    newUser.getSearchResults(req, function(srch){
+        res.render('results',{
+            title:'Results',
+            project: 'Business app',
+            info:'',
+            user_info:'',
+            binfo:srch,
+            type_code:1
+        });
+    });
 });
 
 router.get('/profile/:user/:id', isLoggedIn ,function (req, res, next) {

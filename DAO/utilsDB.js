@@ -208,13 +208,39 @@ module.exports = {
     },
     getSearchResults:function(req, callback){
         var search = connection_to_db.db_connector.openDatabaseConnection();
+        var zip = (req.query.zipcode==='')? 0:parseInt(req.query.zipcode);
+        var city =req.query.city;
+        var state=req.query.state;
+        var bname=req.query.bname;
         var subq="select avg(score) as 'avg_score', biz_id"+
                  " from reviews  group by biz_id";
         var searchq="select q1.avg_score, business.biz_id, business_name, biz_description, address, city, "+
-                     " state, phone_number, biz_email"+
-                     " from "+subq+ "q1"+
-                     " left join business on business.biz_id = q1.biz_id"+
-                     " where city=? OR business_name=?";
+                     " state, phone_number, biz_email, zipcode "+
+                     " from ("+subq+ ") q1 "+
+                     " right join business on business.biz_id = q1.biz_id "+
+                     " where (city='"+city+"' AND state='"+state+"') or zipcode="+zip+
+                     " or business_name='"+bname+"'";
+
+        var results=[];
+        var msgType = 'search';
+        var msgVal = "No Business Were Found!!";
+        search.query(searchq, function(err, rows){
+            if(err){
+                console.log(err);
+                callback(err);
+            }else{
+                if(rows.length===1){
+                    callback(rows[0]);
+                }else if(rows.length!=0){
+                    rows.forEach(function(r){
+                        results.push(r);
+                    });
+                    callback(results);
+                }else{
+                    callback(false, req.flash(msgType, msgVal));
+                }
+            }
+        });
         connection_to_db.db_connector.closeDatabaseConnection(search);
     }
 };

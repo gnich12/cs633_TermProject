@@ -10,9 +10,9 @@
         </ol>
         <form action="/results" method="get" class="form-group-lg">
         <div class="form-group">
-            <input type="text" required name="search" id="bsearch" placeholder="Enter your business name"> |
+            <input type="text"  name="bname" id="bname" placeholder="Enter your business name"> |
             <label for="state">City</label>
-            <input type="text" required name="cszipcode" id="city" placeholder="City">
+            <input type="text"  name="city" id="city" placeholder="City">
             <label for="state">State</label>
             <select name="state">
                 <option value="" selected>...</option>
@@ -20,7 +20,7 @@
                 <option value="il">IL</option>
                 <option value="fl">FL</option>
             </select>
-            <label for="state">Or Zipcode</label>
+            <label for="zipcode">Or Zipcode</label>
             <input type="text" name="zipcode" placeholder="zipcode" id="zipcode">
             <input type="submit" name="submit" value="Search">
         </div>
