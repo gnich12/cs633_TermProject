@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c90379a7-776d-4f51-aea5-76f72f4fdc33" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/db_config.js" afterPath="$PROJECT_DIR$/DAO/db_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/utilsDB.js" afterPath="$PROJECT_DIR$/DAO/utilsDB.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/bus_profile.ejs" afterPath="$PROJECT_DIR$/views/bus_profile.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/forms/login_form.ejs" afterPath="$PROJECT_DIR$/views/forms/login_form.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/forms/register_form.ejs" afterPath="$PROJECT_DIR$/views/forms/register_form.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/forms/search_form.ejs" afterPath="$PROJECT_DIR$/views/forms/search_form.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main/body.ejs" afterPath="$PROJECT_DIR$/views/main/body.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main/navigation.ejs" afterPath="$PROJECT_DIR$/views/main/navigation.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profile.ejs" afterPath="$PROJECT_DIR$/views/profile.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/register.ejs" afterPath="$PROJECT_DIR$/views/register.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/results.ejs" afterPath="$PROJECT_DIR$/views/results.ejs" />
     </list>
     <ignored path="cs633_TermProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,7 +66,7 @@
       <file leaf-file-name="bus_profile.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/bus_profile.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53404254">
+            <state vertical-scroll-proportion="0.40549272">
               <caret line="96" column="52" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
               <folding />
             </state>
@@ -563,7 +548,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449104770134</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed logic to retrieve reviews on business profile.">
+      <created>1449466995561</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1449466995561</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -575,10 +566,10 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22683705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22650057" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30690828" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3952435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3952435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980047" sideWeight="0.5135135" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39637598" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -629,7 +620,8 @@
     <MESSAGE value="added registration form for user registration and logic on back end. also log out. &#10;" />
     <MESSAGE value="added registration files for business and user." />
     <MESSAGE value="added the view for search results and logic to retrieve results" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the view for search results and logic to retrieve results" />
+    <MESSAGE value="fixed logic to retrieve reviews on business profile." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed logic to retrieve reviews on business profile." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1088,7 +1080,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/bus_profile.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53404254">
+        <state vertical-scroll-proportion="0.40549272">
           <caret line="96" column="52" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
           <folding />
         </state>
