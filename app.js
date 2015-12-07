@@ -7,28 +7,25 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
 
-
-
-
 var routes = require('./routes/index');
 var register = require('./routes/register');
 var login = require('./routes/login');
 var profile= require('./routes/profile.js');
 
 var app = express();
-
+app.locals.loc='test';
 //view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.set('test','ok');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(require('morgan')('combined'));
 app.use(require('express-session')({
   secret:'term project',
-  resave:false,
-  saveUninitialized:false
+  resave:true,
+  saveUninitialized:true
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

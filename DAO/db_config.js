@@ -6,7 +6,7 @@ var db_config = {
         host:'localhost',
         user:'root',
         password:'123456',
-        database:'termproj_dev'
+        database:'production' //'termproj_dev'
     }
 };
 

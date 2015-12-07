@@ -1,14 +1,8 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-    <div class="container">
+    <div class="container custom-search">
         <h1>Business Directory</h1>
-        <h4>How to:</h4>
-        <ol>
-            <li>Type your business name</li>
-            <li>Type City, State or Zipcode</li>
-            <li>Click Search</li>
-        </ol>
-        <form action="/results" method="get" class="form-group-lg">
+        <form action="/results" method="get" class="form-group-lg" id="srch-form">
         <div class="form-group">
             <input type="text"  name="bname" id="bname" placeholder="Enter your business name"> |
             <label for="state">City</label>
@@ -19,6 +13,9 @@
                 <option value="ca">CA</option>
                 <option value="il">IL</option>
                 <option value="fl">FL</option>
+                <option value="nh">NH</option>
+                <option value="nc">NC</option>
+                <option value="tx">TX</option>
             </select>
             <label for="zipcode">Or Zipcode</label>
             <input type="text" name="zipcode" placeholder="zipcode" id="zipcode">
@@ -33,24 +30,31 @@
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
+        <div class="col-lg-12">
+            <h1>Search By </h1>
+        </div>
+
+    </div>
+    <div class="row">
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>Business name</h2>
+            <p>if you want to search for an specific business please enter the name of the busines along
+            with the city and state or zipcode</p>
+
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>City and State</h2>
+            <p>Also you can search all the business in your city just by typing the city you want</p>
+
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>Zipcode</h2>
+            <p>or just type your zipcode for all the business in your area.</p>
+
         </div>
     </div>
 
-    <hr>
+
 
 
 

@@ -8,20 +8,20 @@
 
 <% include main/navigation.ejs %>
 <div class="container profile-container">
-    <div>
+    <div class="page-header">
         <h1>Profile</h1>
     </div>
-    <div>
+    <div class="user-profile">
         <ul>
-            <li>First Name: <%= user_info.first_name %></li>
-            <li>Last Name: <%= user_info.last_name %></li>
-            <li>E-mail: <%= user_info.email %></li>
+            <li><span class="label label-primary">First Name:</span> <%= user_info.first_name %></li>
+            <li><span class="label label-primary">Last Name:</span> <%= user_info.last_name %></li>
+            <li><span class="label label-primary">E-mail:</span> <%= user_info.email %></li>
         </ul>
     </div>
     <hr>
     <div>
         <h1>My Comments</h1>
-        <table class="table table-bordered">
+        <table class="table table-hover custom-table">
             <tr>
                 <th>Date</th>
                 <th>Business</th>
@@ -34,13 +34,15 @@
     %>
             <tr>
                 <td><%= (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear() %></td>
-                <td><%= user_info.comments[0].business_name %></td>
+                <td><a href="/bus_profile/<%=user_info.comments[0].biz_id%>">
+                        <%= user_info.comments[0].business_name %>
+                    </a></td>
                 <td><%= user_info.comments[0].comment %></td>
                 <td><%= user_info.comments[0].score %></td>
             </tr>
             <% }else if(user_info.flag === 1){ %>
             <tr>
-                <td>No Comments</td>
+                <td class="alert alert-danger" colspan="4">No Comments</td>
             </tr>
             <% }else{ user_info.comments.forEach(function(i){
         var comment_date = new Date(i.review_date);
@@ -48,7 +50,7 @@
             <tr>
                 <td><%= (comment_date.getMonth() + 1) + "-" + comment_date.getDate()
     + "-" + comment_date.getFullYear() %></td>
-                <td><%= i.business_name %></td>
+                <td><a href="/bus_profile/<%=i.biz_id%>"><%= i.business_name %></a></td>
                 <td><%= i.comment %></td>
                 <td><%= i.score %></td>
             </tr>

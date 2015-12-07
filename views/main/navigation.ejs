@@ -11,17 +11,17 @@
             <a class="navbar-brand" href="/"><%= project %></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right custom-nav">
                 <% if (type_code==1){%>
                     <li><a class="btn btn-primary active" href="/login">Log In</a></li>
                     <li><a class="btn btn-primary active" href="/register">Register</a></li>
                 <%}else if(type_code==2){%>
-                <li><h4><%= info%></h4></li>
+                <li><span class="navbar-brand"><%= info%></span></li>
                 <li><a class="btn btn-primary active" href="/profile/<%=info%>/<%=user_id%>">Profile</a></li>
                 <li><a class="btn btn-primary active" href="/logout">Logout</a></li>
 
                 <%}else{%>
-                <li><h4><%= info%></h4></li>
+                <li><span class="navbar-brand"><%= info%></span></li>
                 <li><a class="btn btn-primary active" href="/logout">Logout</a></li>
 
                 <%}%>

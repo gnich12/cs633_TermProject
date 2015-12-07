@@ -8,18 +8,115 @@
 
 <% include main/navigation.ejs %>
 <div class="container profile-container">
-    <div>
-        <h1>Profile</h1>
+    <div class="page-header">
+        <h1><%=bdata.business_name%></h1>
+
     </div>
-    <div>
-        <ul>
-            <li>First Name: <%= user_info.first_name %></li>
-            <li>Last Name: <%= user_info.last_name %></li>
-            <li>E-mail: <%= user_info.email %></li>
-        </ul>
+    <div class="row">
+        <div class="col-lg-6 business-profile">
+            <ul>
+                <li><span class="label label-primary">Address:</span> <%= bdata.address %></li>
+                <li><span class="label label-primary">City:</span> <%= bdata.city %></li>
+                <li><span class="label label-primary">State:</span> <%=bdata.state%></li>
+                <li><span class="label label-primary">Zipcode:</span> <%=bdata.zipcode%></li>
+                <li><span class="label label-primary">Phone:</span> <%= bdata.phone %></li>
+                <li><span class="label label-primary">E-mail:</span> <%=bdata.email%></li>
+            </ul>
+        </div>
+        <div class="col-lg-6 bus-rating">
+            <%if(bdata.reviews[0].flag===0){%>
+            <span class="badge">
+            Rating<br><%="No rating yet"%>
+        </span>
+            <%}else if(bdata.reviews.length===1){%>
+            <span class="badge">
+            Rating<br><%=(bdata.reviews[0].score).toFixed(1)%>
+        </span>
+            <%}else{
+                var r=0
+            bdata.reviews.forEach(function(s){
+                r=r+s.score %>
+
+            <%});%>
+            <span class="badge" >
+                Rating<br><%=(r/bdata.reviews.length).toFixed(1)%>
+            </span>
+            <%}%>
+        </div>
     </div>
     <hr>
+    <div>
+        <h1>Reviews</h1>
+        <table class="table table-hover custom-table">
+            <tr>
+                <th>Date</th>
+                <th>User</th>
+                <th>Comment</th>
+                <th>Score</th>
+            </tr>
+            <%if (bdata.reviews.length!=1){
+                bdata.reviews.forEach(function(rev){
+                var d = new Date(rev.date);
+            %>
+            <tr>
+                <td><%= (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear() %></td>
+                <td><%=rev.username%></td>
+                <td><%=rev.comment%></td>
+                <td><%=(rev.score).toFixed(1)%></td>
+            </tr>
+            <%});}else{
+                if (bdata.reviews.length==1 && bdata.reviews[0].flag===0){
+            %>
+            <tr colspan="3">
+                <td>No Reviews... </td>
 
+            </tr>
+            <%}else{
+                var d = new Date(bdata.reviews[0].date);
+            %>
+            <tr>
+                <td><%= (d.getMonth() + 1) + "-" + d.getDate() + "-" + d.getFullYear() %></td>
+                <td><%=bdata.reviews[0].username%></td>
+                <td><%=bdata.reviews[0].comment%></td>
+                <td><%=(bdata.reviews[0].score).toFixed(1)%></td>
+            </tr>
+            <%}}%>
+        </table>
+    </div>
+    <hr>
+    <div class="review">
+        <%if(user_id!==''){
+            var date=new Date();
+        %>
+        <form action="/review" method="post">
+            <h4 class="text-primary">Write a Review</h4>
+            <div class="form-group">
+                <input type="text" value="<%=user_id%>" name="userid" hidden>
+                <input type="text" value="<%=bdata.businessId%>" name="busId" hidden>
+                <input type="text" value="<%=date.getFullYear()+"-"+
+                (date.getMonth()+1)+"-"+date.getDate()%>" name="date" hidden>
+                <textarea rows="4" cols="50" placeholder="Enter Text..." name="comment"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="score" class="label label-primary">Rate</label>
+                <select name="score">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                    <option value="3">3</option>
+                    <option value="3.5">3.5</option>
+                    <option value="4">4</option>
+                    <option value="4.5">4.5</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group"><input type="submit" value="Add Review" class="btn btn-primary"> </div>
+        </form><%}else{%>
+        <a href="/login">To add a review you need to log in</a>
+        <%}%>
+    </div>
 
 </div>
 

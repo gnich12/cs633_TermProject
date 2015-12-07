@@ -8,40 +8,44 @@
 <!-- Navigation -->
 <%include main/navigation.ejs%>
 <%include forms/search_form.ejs%>
+
 <div class="container" >
     <h1>Results</h1>
-    <%if (binfo.length>1){
-        binfo.forEach(function(biz){
+    <%if(binfo.rows.length===0){%>
+        <div class="alert alert-danger"><%=error%></div>
+    <%}else if (binfo.rows.length===1){%>
+    <div class="result-group">
+        <div class="results">
+            <h3><a href="/bus_profile/<%=binfo.rows[0].biz_id%>"><%=binfo.rows[0].business_name%></a></h3>
+            <ul>
+                <li><b>Address:</b>&nbsp;&nbsp;<%=binfo.rows[0].address%></li>
+                <li><b>City:</b>&nbsp;&nbsp;<%=binfo.rows[0].city%></li>
+                <li><b>State:</b>&nbsp;&nbsp;<%=binfo.rows[0].state%></li>
+            </ul>
+        </div>
+        <div class="rating">
+            <span class="badge">Rating<br><%=(binfo.rows[0].avg_score===null? "No rating yet" : (binfo.rows[0].avg_score).toFixed(1))%></span>
+        </div>
+    </div>
+    <%}else{
+        binfo.rows.forEach(function(biz){
     %>
-        <div>
-            <div>
-                <h4><a href="#"><%=biz.business_name%></a></h4>
-                <ul>
-                     <li>Address:<%=biz.address%></li>
-                    <li>City:<%=biz.city%></li>
-                    <li>State:<%=biz.state%></li>
-                </ul>
-            </div>
-            <div>
-                <span>Rating:<%=(biz.avg_score===null?"No rating yet" : biz.avg_score)%> </span>
-            </div>
+    <div class="result-group">
+        <div class="results">
+            <h3><a href="/bus_profile/<%=biz.biz_id%>"><%=biz.business_name%></a></h3>
+            <ul>
+                <li><b>Address:</b>&nbsp;&nbsp;<%=" "+biz.address%></li>
+                <li>City:&nbsp;&nbsp;<%=biz.city%></li>
+                <li>State:&nbsp;&nbsp;<%=biz.state%></li>
+            </ul>
         </div>
-    <%});%>
-    <%}else{%>
-        <div>
-            <div>
-                <h4><a href="#"><%=binfo.business_name%></a></h4>
-                <ul>
-                    <li>Address:<%=binfo.address%></li>
-                    <li>City:<%=binfo.city%></li>
-                    <li>State:<%=binfo.state%></li>
-                </ul>
-            </div>
-            <div>
-                <span>Rating: <%=(binfo.avg_score===null? "No rating yet" : binfo.avg_score)%></span>
-            </div>
+        <div class="rating">
+            <span class="badge">Rating:<br><%=(biz.avg_score===null?"No rating yet" : (biz.avg_score).toFixed(1))%> </span>
         </div>
+    </div>
+        <%});%>
     <%}%>
+
 </div>
 
 
